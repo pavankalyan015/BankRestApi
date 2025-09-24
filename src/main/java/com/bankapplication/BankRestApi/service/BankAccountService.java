@@ -167,7 +167,7 @@ public class BankAccountService {
                 bankAccount.setLastTransaction(LocalDateTime.now());
                 if(bankAccount.getAccountType()==AccountType.SAVINGS && amount==currentBalance)
                     bankAccount.setStatus(AccountStatus.CLOSED);
-                else if(bankAccount.getAccountType()==AccountType.CURRENT && (currentBalance+5000)<amount)
+                else if(bankAccount.getAccountType()==AccountType.CURRENT && (currentBalance+5000)==amount)
                     bankAccount.setStatus(AccountStatus.CLOSED);
 
                 bankAccountRepository.save(bankAccount);
