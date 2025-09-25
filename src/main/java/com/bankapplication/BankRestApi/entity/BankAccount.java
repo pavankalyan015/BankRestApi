@@ -30,7 +30,7 @@ public class BankAccount {
 
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = true) // Foreign key in BankAccount table
+    @JoinColumn(name = "customer_id", nullable = true) // foreign key in accounts
     @JsonBackReference
     @NotNull(message = "Customer is required")
     private Customer customer;
@@ -68,13 +68,11 @@ public class BankAccount {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-
-
-    @Transient
     @JsonProperty("customerId")
     public Long getCustomerId() {
         return (customer != null) ? customer.getCustomerId() : null;
     }
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
@@ -86,13 +84,6 @@ public class BankAccount {
             this.interestRate = 0.0;
         }
     }
-
-    @PreUpdate
-    public void preUpdate() {
-        updatedAt = LocalDateTime.now();
-    }
-
-
 
 
 }

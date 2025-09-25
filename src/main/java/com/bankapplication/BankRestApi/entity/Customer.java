@@ -48,7 +48,7 @@ public class Customer {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
    // @Column(name = "accounts")
     @JsonManagedReference
     private List<BankAccount> accounts;
