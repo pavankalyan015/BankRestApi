@@ -1,5 +1,6 @@
 package com.bankapplication.BankRestApi.controller;
 
+
 import com.bankapplication.BankRestApi.entity.BankAccount;
 import com.bankapplication.BankRestApi.entity.Customer;
 import com.bankapplication.BankRestApi.entity.Transaction;
@@ -100,9 +101,5 @@ public class BankAccountController {
     public List<BankAccount> top5Account(){
          return bankAccountService.getTopAccountsByBalance();
     }
-
-
-
-
 
 }

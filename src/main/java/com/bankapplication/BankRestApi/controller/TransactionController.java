@@ -14,7 +14,7 @@ import java.util.UUID;
 @RequestMapping("/api/v1/")
 public class TransactionController {
 
-    @Autowired
+   // @Autowired
     private final TransactionService transactionService;
 
     public TransactionController(TransactionService transactionService) {

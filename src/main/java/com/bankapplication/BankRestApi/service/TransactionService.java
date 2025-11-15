@@ -17,10 +17,10 @@ import java.util.UUID;
 
 @Service
 public class TransactionService {
-    @Autowired
+   // @Autowired
     private final TransactionRepository transactionRepository;
 
-    @Autowired
+    //@Autowired
     private BankAccountRepository bankAccountRepository;
 
 
